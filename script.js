@@ -1,14 +1,15 @@
 const wortEingabe = document.querySelector(".wort");
 const eingabe = document.querySelector(".eingabe");
 const raten = document.getElementById("raten");
+const vorschlag = document.querySelector(".vorschlag");
+var wort;
 
-function getText(){
-    var wort = document.querySelector(".wort").value;
+function wortEingegeben() {
+    wort = document.querySelector(".wort").value;
     wortEingabe.style.display = "none";
     eingabe.style.display = "none";
-    for (let i = 0; i < wort.length; i++) {
-        raten.innerHTML += "<input type='text'>";
-    }
+    vorschlag.style.display = "block";
+    
 }
 
-eingabe.addEventListener("click", getText);
+eingabe.addEventListener("click", wortEingegeben);

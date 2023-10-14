@@ -1,15 +1,22 @@
-body {
-    background-color: grey;
-}
-
-h1 {
-    text-align: center;
-}
-
-.vorschlag {
-    display: none;
-}
-
-.enter {
-    display: none;
-}
+svg {
+    margin: 0 auto;
+    border: 1px solid black;
+  }
+  
+  line {
+    stroke: black;
+    stroke-width: 4;
+  }
+  
+  #door1 {
+    transform-origin: 0% 100%;
+  }
+  
+  #door2 {
+    transform-origin: 100% 100%;
+  }
+  
+  .hide {
+    visibility: hidden;
+  }
+  

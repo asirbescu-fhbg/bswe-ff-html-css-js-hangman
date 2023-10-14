@@ -10,12 +10,32 @@
 
 <body>
     <h1>Hang Man</h1>
-    <input class="wort" type="text" placeholder="Welches Wort?">
-    <input type="text" placeholder="Kurze Beschreibung!">
-    <button type="submit" class="eingabe">Eingabe</button>
-    <input class="vorschlag" type="text" placeholder="Vorschlag" maxlength="1">
-    <button type="submit" class="enter">Eingabe</button>
-    <div id="raten"></div>
+    <div class="rateBox">
+        <input type="text" class="rateTextfeld" placeholder="Welches Wort?">
+        <input type="text" class="beschreibungTextfeld" placeholder="Kurze Beschreibung">
+        <button type="submit" class="rateEingabeBtn">Enter</button>
+    </div>
+    <div id="wortPlatzhalter">
+        <p id="platzhalter"></p>
+    </div>
+    <div id="buchstabenBtns">
+    </div>
+    <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-width="6" stroke="black" d="
+           M3,100 a25,25 0 0 1 25,-25 a25,25 0 0 1 25,25"/>
+        <path stroke-width="6" stroke="black" d="M28,0 L28, 77"/>
+        <path stroke-width="6" stroke="black" d="M28,3 L80, 3"/>
+        <path stroke-width="6" stroke="black" d="M45,3 L28, 2"/>
+        <path stroke-width="6" stroke="black" d="M77,3 L77, 15"/>
+        <circle stroke-width="6" stroke="black" fill="black" cx="77" cy="20" r="5"/>
+        <path stroke-width="6" stroke="black" d="M77,3 L77, 55"/>
+        
+        <path stroke-width="6" stroke="black" d="M77,26 L65, 45"/>
+        <path stroke-width="6" stroke="black" d="M77,26 L89, 45"/>
+        
+        <path stroke-width="6" stroke="black" d="M77,55 L65, 75"/>
+        <path stroke-width="6" stroke="black" d="M77,55 L89, 75"/>
+      </svg>
     <script src="script.js"></script>
 </body>
 

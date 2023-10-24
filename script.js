@@ -17,20 +17,8 @@ function wortEingegeben() {
     document.getElementById("platzhalter").innerHTML += 
         loesung.replaceAll(/[A-Z]/g, "_");
     document.getElementById("beschreibung").innerHTML += "Tipp: " + beschreibungTextfeld.value;
+    beschreibungTextfeld.value = "";
     erstelleBtns();
-}
-
-function validate() { //überprüfung muss noch gemacht werden
-    if (document.myForm.name.value == "") {
-        alert("Enter a name");
-        document.myForm.name.focus();
-        return false;
-    }
-    if (!/^[a-zA-Z]*$/g.test(document.myForm.name.value)) {
-        alert("Invalid characters");
-        document.myForm.name.focus();
-        return false;
-    }
 }
 
 function erstelleBtns(){
@@ -52,7 +40,7 @@ function vorschlagen(buchstabe) {
 }
 
 function richtigErraten(buchstabe) {
-    document.getElementById("falscherraten").innerHTML += "💞";
+    document.getElementById("score").innerHTML += "💞";
     let p;
     for (let i = 0; i < loesung.length; i++) {
         if (loesung[i] == buchstabe) {
@@ -63,12 +51,13 @@ function richtigErraten(buchstabe) {
     }
     p = document.getElementById("platzhalter").innerHTML;
     if (p == loesung) {
-        console.log("yes");
+        document.getElementById("gewonnenText").style.display = "block";
+        document.getElementById("buchstabenBtns").style.display = "none";
     }
 }
 
 function falschErraten() {
-    document.getElementById("falscherraten").innerHTML += "💩";
+    document.getElementById("score").innerHTML += "💩";
     if (errorZaehler == 1) {
         document.getElementById("bogen").style.display = "block";
     } else if (errorZaehler == 2) {
@@ -82,6 +71,8 @@ function falschErraten() {
         for(var i = 0; i < maxerl.length; i++){
             maxerl[i].style.display = "block";
         }
+        document.getElementById("verlorenText").innerHTML += 
+            "<p>Das Wort wäre " + loesung + " gewesen!<p>";
         document.getElementById("verlorenText").style.display = "block";
         document.getElementById("buchstabenBtns").style.display = "none";
     } 

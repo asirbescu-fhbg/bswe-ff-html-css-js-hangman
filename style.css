@@ -2,14 +2,15 @@ svg {
     margin: 0 auto;
 }
 
-#verlorenText {
+#verlorenText, #gewonnenText {
     color: red;
     font-size: 40px;
     font-style: italic;
     text-shadow: -4px 4px 4px #000000;
+    display: none;
 }
 
-#bogen, #mast, #balken, #strick, #verlorenText, .maxerl {
+#bogen, #mast, #balken, #strick, .maxerl {
     display: none;
 }
 

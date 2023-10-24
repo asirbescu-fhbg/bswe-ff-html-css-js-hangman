@@ -15,26 +15,36 @@
         <input type="text" class="beschreibungTextfeld" placeholder="Kurze Beschreibung">
         <button type="submit" class="rateEingabeBtn">Enter</button>
     </div>
+    <div>
+        <p id="beschreibung"></p>
+    </div>
     <div id="wortPlatzhalter">
         <p id="platzhalter"></p>
     </div>
     <div id="buchstabenBtns">
     </div>
-    <svg width="200" height="200" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path id="bogen" stroke-width="6" stroke="black" d="
-           M3,100 a25,25 0 0 1 25,-25 a25,25 0 0 1 25,25"/>
-        <path id="" stroke-width="6" stroke="blue" d="M28,0 L28, 77"/>
-        <path stroke-width="6" stroke="green" d="M28,3 L80, 3"/>
-        <circle stroke-width="6" stroke="grey" fill="black" cx="77" cy="20" r="5"/>
-        <path stroke-width="6" stroke="cyan" d="M77,3 L77, 55"/>
-        
-        <path stroke-width="6" stroke="lightblue" d="M77,26 L65, 45"/>
-        <path stroke-width="6" stroke="lightgreen" d="M77,26 L89, 45"/>
-        
-        <path stroke-width="6" stroke="orange" d="M77,55 L65, 75"/>
-        <path stroke-width="6" stroke="pink" d="M77,55 L89, 75"/>
+    <div>
+        <p id="falscherraten"></p>
+    </div>
+    <svg class="hangman" width="200" height="200" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path id="bogen" stroke-width="6" stroke="#BA8C63" d="M3,100 a25,25 0 0 1 25,-25 a25,25 0 0 1 25,25"/>
+        <path id="mast" stroke-width="6" stroke="#BA8C63" d="M28,0 L28, 77"/>
+        <path id="balken" stroke-width="6" stroke="#BA8C63" d="M28,3 L80, 3"/>
+        <path id="strick" stroke-width="6" stroke="white" d="M77,3 L77, 13"/>
+        <circle class="maxerl" stroke-width="6" stroke="black" fill="black" cx="77" cy="20" r="5"/>
+        <path class="maxerl" stroke-width="6" stroke="black" d="M77 55 L77, 26"/>
+        <path class="maxerl" stroke-width="6" stroke="black" d="M77,26 L65, 45"/>
+        <path class="maxerl" stroke-width="6" stroke="black" d="M77,26 L89, 45"/>
+        <path class="maxerl" stroke-width="6" stroke="black" d="M77,55 L65, 75"/>
+        <path class="maxerl" stroke-width="6" stroke="black" d="M77,55 L89, 75"/>
       </svg>
     <script src="script.js"></script>
+    <div id="verlorenText">
+        <p>Verloren!</p>
+    </div>
+    <footer>
+        <p id="copyright">Fr. Michler Julia, MA, Hr. Wagner Marcel, Fr. Sirbescu Amalia 💩💀</p>
+    </footer>
 </body>
 
 </html>

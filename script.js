@@ -1,7 +1,9 @@
 const rateBox = document.querySelector(".rateBox");
 const rateTextfeld = document.querySelector(".rateTextfeld");
+const beschreibungTextfeld = document.querySelector(".beschreibungTextfeld");
 let loesung = rateTextfeld;
 const rateEingabeBtn = document.querySelector(".rateEingabeBtn");
+let errorZaehler = 0;
 
 rateTextfeld.addEventListener("keyup", function(event) {
     event.preventDefault();
@@ -14,15 +16,28 @@ function wortEingegeben() {
     rateTextfeld.value = "";
     document.getElementById("platzhalter").innerHTML += 
         loesung.replaceAll(/[A-Z]/g, "_");
+    document.getElementById("beschreibung").innerHTML += "Tipp: " + beschreibungTextfeld.value;
     erstelleBtns();
+}
+
+function validate() { //überprüfung muss noch gemacht werden
+    if (document.myForm.name.value == "") {
+        alert("Enter a name");
+        document.myForm.name.focus();
+        return false;
+    }
+    if (!/^[a-zA-Z]*$/g.test(document.myForm.name.value)) {
+        alert("Invalid characters");
+        document.myForm.name.focus();
+        return false;
+    }
 }
 
 function erstelleBtns(){
     let btns = "abcdefghijklmnopqrstuvwxyz".toUpperCase();
     for (let i = 0; i < btns.length; i++) {
         document.getElementById("buchstabenBtns").innerHTML +=  
-        "<button id=\"" + btns[i] + "\" " + 
-        "onClick=\"vorschlagen(\'" + btns[i] + "\')\">"  + btns[i] + "</button>";
+        "<button id=\"" + btns[i] + "\" " + "style=\"" + "font-size: 20px; margin-left: 4px; padding: 8px 12px;" + "\"" + "onClick=\"vorschlagen(\'" + btns[i] + "\')\">"  + btns[i] + "</button>";
     }
 }
 
@@ -31,11 +46,13 @@ function vorschlagen(buchstabe) {
     if (loesung.includes(buchstabe)) {
         richtigErraten(buchstabe);
     } else {
+        errorZaehler++;
         falschErraten();
     }
 }
 
 function richtigErraten(buchstabe) {
+    document.getElementById("falscherraten").innerHTML += "💞";
     let p;
     for (let i = 0; i < loesung.length; i++) {
         if (loesung[i] == buchstabe) {
@@ -51,9 +68,23 @@ function richtigErraten(buchstabe) {
 }
 
 function falschErraten() {
-    document.querySelector(".svg").style.display = "inline";
+    document.getElementById("falscherraten").innerHTML += "💩";
+    if (errorZaehler == 1) {
+        document.getElementById("bogen").style.display = "block";
+    } else if (errorZaehler == 2) {
+        document.getElementById("mast").style.display = "block";
+    } else if (errorZaehler == 3) {
+        document.getElementById("balken").style.display = "block";
+    } else if (errorZaehler == 4) {
+        document.getElementById("strick").style.display = "block";
+    } else {
+        var maxerl = document.getElementsByClassName("maxerl");
+        for(var i = 0; i < maxerl.length; i++){
+            maxerl[i].style.display = "block";
+        }
+        document.getElementById("verlorenText").style.display = "block";
+        document.getElementById("buchstabenBtns").style.display = "none";
+    } 
 }
 
-
 rateEingabeBtn.addEventListener("click", wortEingegeben);
-

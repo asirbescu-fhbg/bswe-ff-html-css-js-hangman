@@ -1,21 +1,39 @@
 svg {
     margin: 0 auto;
-  }
-  
-  line {
-    stroke: black;
-    stroke-width: 4;
-  }
-  
-  #door1 {
-    transform-origin: 0% 100%;
-  }
-  
-  #door2 {
-    transform-origin: 100% 100%;
-  }
-  
-  .hide {
-    visibility: hidden;
-  }
-  
+}
+
+#verlorenText {
+    color: red;
+    font-size: 40px;
+    font-style: italic;
+    text-shadow: -4px 4px 4px #000000;
+}
+
+#bogen, #mast, #balken, #strick, #verlorenText, .maxerl {
+    display: none;
+}
+
+h1, footer, #beschreibung {
+    color: pink ;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+}
+
+body {
+    background-color: grey;
+    text-align: center;
+}
+
+#buchstabenBtns {
+    text-align: center;
+}
+
+
+footer {
+    position: absolute;
+    left: 10;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+}
